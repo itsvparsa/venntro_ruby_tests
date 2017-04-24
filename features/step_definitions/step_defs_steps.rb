@@ -72,3 +72,26 @@ And(/^I see a confirmation message as "([^"]*)"$/) do |message|
   puts "the confirmation page is ....." + message
 end
 
+And(/^I click on dynamic loading example$/) do
+  click_link("Dynamic Loading")
+end
+
+And(/^I click on first link$/) do
+  click_link("Example 1: Element on page that is hidden")
+end
+
+And(/^I click on start$/) do
+  click_button("Start")
+end
+
+And(/^I verify loading bar displayed$/) do
+  sleep 2
+  expect(page).to have_xpath('//*[@id="loading"]')
+  sleep 10
+end
+
+Then(/^I see "([^"]*)" message displayed on the page$/) do |message|
+  expect(page).to have_content(message)
+  puts "the message displayed on the page is ......" + message
+end
+

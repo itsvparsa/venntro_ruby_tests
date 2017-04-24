@@ -26,3 +26,15 @@ And I see a confirmation message as "It's gone"
 When I click on "Add" button
 Then I verify checkbox is displayed
 And I see a confirmation message as "It's back"
+
+
+@dynamic_loading
+Scenario: Navigating to herokuapp and testing dynamic loading
+Given I navigated to url
+And I click on dynamic loading example
+And I click on first link
+And I click on start
+And I verify loading bar displayed
+Then I see "Hello World!" message displayed on the page
+
+
