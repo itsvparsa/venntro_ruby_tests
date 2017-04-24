@@ -29,7 +29,6 @@ end
 
 When(/^I click on login button$/) do
  click_button("Login")
-
 end
 
 Then(/^I should see login validation "([^"]*)" on the page$/) do |message|
@@ -59,7 +58,7 @@ And(/^I click on "([^"]*)" button$/) do |button|
  sleep 5
 end
 
-Given(/^I verify checkbox is disappeared$/) do
+And(/^I verify checkbox is disappeared$/) do
  expect(page). not_to have_content('A checkbox')
   #driver.find_element(id: "checkbox").displayed?
     #puts "test failed"
@@ -70,6 +69,6 @@ end
 
 And(/^I see a confirmation message as "([^"]*)"$/) do |message|
   expect(page).to have_content(message)
-
+  puts "the confirmation page is ....." + message
 end
 
