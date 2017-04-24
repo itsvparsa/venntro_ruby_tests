@@ -1,10 +1,8 @@
 #require 'capybara/cucumber'
-#Capybara.app = "https://the-internet.herokuapp.com/"
 #require 'capybara/rspec'
 #require 'rspec'
 #require 'selenium-webdriver'
 #driver = Selenium::WebDriver.for :chrome
-#Capybara.app = MyRackApp
 #Capybara.default_driver = :selenium
 #Capybara.current_driver = :selenium_chrome
 
@@ -12,7 +10,7 @@ Given(/^I navigated to "([^"]*)"$/) do |url|
  visit(url)
 end
 
-And(/^I click on from authentication example$/) do
+And(/^I click on form authentication example$/) do
  #find_link("Form Authentication").click
  click_link("Form Authentication")
 end
@@ -95,3 +93,12 @@ Then(/^I see "([^"]*)" message displayed on the page$/) do |message|
   puts "the message displayed on the page is ......" + message
 end
 
+Given(/^I click on sortable data tables example$/) do
+  sleep 1
+  click_link("Sortable Data Tables")
+end
+
+Given(/^I get email address displayed for jason doe$/) do
+  find(:xpath, '//*[@id="table1"]/tbody/tr[3]/td[3]').value
+  #puts "the email address is " + value
+end

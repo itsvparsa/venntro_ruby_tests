@@ -1,6 +1,6 @@
-Feature: login test with valid credentials and invalid credentials
+Feature: A test check following scenarios are passing with specified data
 
-@login
+@login_valid_invalid
 Scenario Outline: Navigating to herokuapp and try to login with valid and invalid credentials
 Given I navigated to <url>
 And I click on form authentication example
@@ -38,3 +38,8 @@ And I verify loading bar displayed
 Then I see "Hello World!" message displayed on the page
 
 
+@webtable
+Scenario: Navigating to herokuapp and getting email address from web table
+Given I navigated to url
+And I click on sortable data tables example
+And I get email address displayed for jason doe
